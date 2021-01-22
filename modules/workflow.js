@@ -3,14 +3,17 @@ var TOKEN;
 
 module.exports = {
     GetTasks: function (user) {
+        //Retrieve tasks for a given (UI) user. 
         return (GetTasks(user));
     },
     CompleteTask: function (taskId) {
+        //PATCH a task to complete and continue the workflow
         return (CompleteTask(taskId));
     }
 }
 
 let GetTasks = function (user) {
+    //Fetch all open (READY) task instances for a given activity(id)
     return new Promise(function (resolve, reject) {    
         const activityId = convertUserToActivity(user)       
         if (!activityId) {
@@ -23,11 +26,9 @@ let GetTasks = function (user) {
                 params: {
                     "status": "READY",
                     "activityId": activityId
-                    // "scope": ""
                 }
             }).then((res) => {
                 console.log("Retrieving Tasks from Workflow for User " + user)
-                console.log(res);
                 resolve(res.data)
             }).catch((error) => {
                 console.error(error)
@@ -37,6 +38,7 @@ let GetTasks = function (user) {
 }
 
 let getAccessToken = () => {
+    //Get the Oauth2 access token and store it as defaults of the axios client
     return new Promise(function (resolve, reject) {
         axios.request({
             url: "/oauth/token",
@@ -61,6 +63,8 @@ let getAccessToken = () => {
 }
 
 function convertUserToActivity(user) {
+    //Each Area has an activity. The tasks are assigned to the areas.
+    //This is a from/to reference between Areas x Activity types
     switch (user) {
         case "kitchen":
             return process.env.ACTIVITY_KITCHEN
@@ -72,7 +76,5 @@ function convertUserToActivity(user) {
             return null;
     }
 }
-
-getAccessToken().then(token =>{
-    TOKEN = token
-})
+//First request to have the Oauth token saved
+getAccessToken()
