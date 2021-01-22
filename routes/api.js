@@ -10,10 +10,9 @@ module.exports = router
 //EndPoint To retrieve BusinessPartners from ERP
 router.get('/tasks', function (req, res) { 
     workflow.GetTasks(req.query.user).then((data) => {
-        console.log(data)
         res.statusCode = 200
         res.setHeader('Content-Type', 'application/json');
-        res.send({msg: "User Tasks"});
+        res.send(data);
     }).catch((error) => {
         console.error("Error getting user tasks" + error)
         res.statusCode = 500
