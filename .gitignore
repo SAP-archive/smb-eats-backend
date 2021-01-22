@@ -1,4 +1,5 @@
 /node_modules/
+/.vscode/
 
 # Logs
 logs
@@ -104,4 +105,5 @@ dist
 
 # TernJS port file
 .tern-port
+.vscode/launch.json
 .vscode/launch.json
