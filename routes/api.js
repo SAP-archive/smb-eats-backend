@@ -25,10 +25,20 @@ router.get('/tasks', function (req, res) {
 });
 
 router.post('/completeTask', function (req, res) { 
+    //Complete a task for an ID and if passed a WF instance ID it also
+    //Returns the subsequent task as response.
     workflow.CompleteTask(req.query.taskId).then((data) => {
-        res.statusCode = 204
-        res.setHeader('Content-Type', 'application/json');
-        res.send(data);
+        if(req.query.instanceID){
+            workflow.GetOpenTaskOnInstance(req.query.instanceID).then((data) => {
+                res.statusCode = 200
+                res.setHeader('Content-Type', 'application/json');
+                res.send(data);
+            })
+        }else{
+            res.statusCode = 204
+            res.setHeader('Content-Type', 'application/json');
+            res.send(data);
+        }
     }).catch((error) => {
         console.error("Error completing task" + error)
         if(error.response.data.error.details[0].message){

@@ -6,6 +6,10 @@ module.exports = {
         //Retrieve tasks for a given (UI) user. 
         return (GetTasks(user));
     },
+    GetOpenTaskOnInstance: function (instanceID) {
+        //Retrive the open task on a worfklow instance
+        return (GetOpenTaskOnInstance(instanceID));
+    },
     CompleteTask: function (taskId) {
         //PATCH a task to complete and continue the workflow
         return (CompleteTask(taskId));
@@ -38,6 +42,29 @@ let GetTasks = function (user) {
     })
 }
 
+let GetOpenTaskOnInstance = function (instanceID) {
+    //Fetch all open (READY) task instances for a given workflow(id)
+    //This should be the last task (Rider going to deliver)
+    return new Promise(function (resolve, reject) {    
+       
+        axios.request({
+            url: "/v1/task-instances",
+            method: "GET",
+            baseURL: process.env.WF_REST_URL,
+            params: {
+                "status": "READY",
+                "workflowInstanceId": instanceID
+            }
+        }).then((res) => {
+            console.log("Retrieving Task from Workflow WF instance " + instanceID)
+            resolve(res.data)
+        }).catch((error) => {
+            console.error(error)
+            reject(error)
+        });
+    })
+
+}
 let CompleteTask = function (taskId) {
     //Mark Task as completed
     return new Promise(function (resolve, reject) {    
