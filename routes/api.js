@@ -11,7 +11,7 @@ router.get('/tasks', function (req, res) {
     workflow.GetTasks(req.query.user).then((data) => {
         res.statusCode = 200
         res.setHeader('Content-Type', 'application/json');
-        res.send(data);
+        res.send(formatTasks(data));
     }).catch((error) => {
         console.error("Error getting user tasks" + error)
         res.statusCode = 500
@@ -87,4 +87,15 @@ router.post('/start', function (req, res) {
     })
 });
 
-
+function formatTasks(tasks){
+    var formattedTasks = []
+    tasks.forEach(element => {
+        item = {
+            id: element.id, 
+            createdAt: element.createdAt, 
+            subject:element.subject,
+            workflowInstanceId:element.workflowInstanceId}
+            formattedTasks.push(item)
+    });
+    return formattedTasks;
+}
