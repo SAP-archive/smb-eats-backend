@@ -32,6 +32,29 @@ let GetTasks = function (user) {
                 resolve(res.data)
             }).catch((error) => {
                 console.error(error)
+                reject(error)
+            });
+        }
+    })
+}
+
+let CompleteTask = function (taskId) {
+    //Mark Task as completed
+    return new Promise(function (resolve, reject) {    
+        if (!taskId) {
+            reject("Invalid Task ID - " + taskId)
+        }else{
+            axios.request({
+                url: "/v1/task-instances/"+taskId,
+                method: "PATCH",
+                baseURL: process.env.WF_REST_URL,
+                data: {"context": {},"status": "COMPLETED"}
+            }).then((res) => {
+                console.log("Task "+ taskId + " completed!")
+                resolve(res.data)
+            }).catch((error) => {
+                console.error(error)
+                reject(error)
             });
         }
     })

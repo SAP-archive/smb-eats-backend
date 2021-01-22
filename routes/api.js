@@ -17,13 +17,29 @@ router.get('/tasks', function (req, res) {
         console.error("Error getting user tasks" + error)
         res.statusCode = 500
         res.setHeader('Content-Type', 'application/json');
+        if(error.message){
+            error = error.message
+        }
         res.send({msg: error});
     })
    
 });
 
 router.post('/completeTask', function (req, res) { 
-    console.log("Completing task")
-    res.setHeader('Content-Type', 'application/json');
-    res.send({msg: "task Completed Tasks"});
+    workflow.CompleteTask(req.query.taskId).then((data) => {
+        res.statusCode = 204
+        res.setHeader('Content-Type', 'application/json');
+        res.send(data);
+    }).catch((error) => {
+        console.error("Error completing task" + error)
+        if(error.response.data.error.details[0].message){
+            console.error(error.response.data.error.details[0].message)
+        }
+        res.statusCode = error.response.status
+        res.setHeader('Content-Type', 'application/json');
+        if(error.message){
+            error = error.message
+        }
+        res.send({msg: error});
+    })
 });
