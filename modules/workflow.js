@@ -2,6 +2,10 @@ const axios = require("axios")
 var TOKEN;
 
 module.exports = {
+    StartInstance: function (context) {
+        //Starts a new WF instance
+        return (StartInstance(context));
+    },
     GetTasks: function (user) {
         //Retrieve tasks for a given (UI) user. 
         return (GetTasks(user));
@@ -18,6 +22,28 @@ module.exports = {
         //PATCH a task to complete and continue the workflow
         return (CompleteTask(taskId));
     }
+}
+
+let StartInstance = function (context) {
+    //Starts the Workflow Instance. The beggining of the process
+    return new Promise(function (resolve, reject) {    
+        const data = {
+            definitionId: process.env.WF_DEFINITION,
+            context: context}
+    
+        axios.request({
+            url: "/v1/workflow-instances",
+            method: "POST",
+            baseURL: process.env.WF_REST_URL,
+            data: data
+        }).then((res) => {
+            console.log("Instance "+res.data.id+ " Created Successfully")
+            resolve(res.data)
+        }).catch((error) => {
+            console.error(error)
+            reject(error)
+        });
+    })
 }
 
 let GetTasks = function (user) {
@@ -112,6 +138,7 @@ let CompleteTask = function (taskId) {
         }
     })
 }
+
 
 let getAccessToken = () => {
     //Get the Oauth2 access token and store it as defaults of the axios client

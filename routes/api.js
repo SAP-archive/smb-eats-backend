@@ -71,3 +71,20 @@ router.get('/taskContext', function (req, res) {
    
 });
 
+router.post('/start', function (req, res) { 
+    workflow.StartInstance(req.body).then((data) => {
+        res.statusCode = 200
+        res.setHeader('Content-Type', 'application/json');
+        res.send(data);
+    }).catch((error) => {
+        console.error("Error starting instance")
+        res.statusCode = 500
+        res.setHeader('Content-Type', 'application/json');
+        if(error.message){
+            error = error.message
+        }
+        res.send({msg: error});
+    })
+});
+
+
