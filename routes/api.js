@@ -2,7 +2,7 @@ const express = require('express')
 const workflow = require('../modules/workflow');
 const router = express.Router();
 
-router.get('/', (req,res) => res.send('Workflow API'));
+router.get('/', (req,res) => res.send('<h1>ByD Eats 🍕 Workflow API</h1>'));
 
 module.exports = router
 
@@ -52,3 +52,22 @@ router.post('/completeTask', function (req, res) {
         res.send({msg: error});
     })
 });
+
+router.get('/taskContext', function (req, res) { 
+    workflow.GetTaskContext(req.query.taskId).then((data) => {
+        res.statusCode = 200
+        res.setHeader('Content-Type', 'application/json');
+        data.id = req.query.taskId
+        res.send(data);
+    }).catch((error) => {
+        console.error("Error getting task context" + error)
+        res.statusCode = 500
+        res.setHeader('Content-Type', 'application/json');
+        if(error.message){
+            error = error.message
+        }
+        res.send({msg: error});
+    })
+   
+});
+

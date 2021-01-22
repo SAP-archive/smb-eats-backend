@@ -10,6 +10,10 @@ module.exports = {
         //Retrive the open task on a worfklow instance
         return (GetOpenTaskOnInstance(instanceID));
     },
+    GetTaskContext: function (taskId) {
+        //Retrive the context (user data) of a task
+        return (GetTaskContext(taskId));
+    },
     CompleteTask: function (taskId) {
         //PATCH a task to complete and continue the workflow
         return (CompleteTask(taskId));
@@ -45,8 +49,7 @@ let GetTasks = function (user) {
 let GetOpenTaskOnInstance = function (instanceID) {
     //Fetch all open (READY) task instances for a given workflow(id)
     //This should be the last task (Rider going to deliver)
-    return new Promise(function (resolve, reject) {    
-       
+    return new Promise(function (resolve, reject) {           
         axios.request({
             url: "/v1/task-instances",
             method: "GET",
@@ -65,6 +68,29 @@ let GetOpenTaskOnInstance = function (instanceID) {
     })
 
 }
+
+let GetTaskContext = function (taskId) {
+    //fetch the context (user data) of a task
+    //In this case, name, address, etc..
+    return new Promise(function (resolve, reject) {      
+        if (!taskId) {
+            reject("Invalid Task ID - " + taskId)
+        }else{
+            axios.request({
+                url: "/v1/task-instances/"+taskId+"/context",
+                method: "GET",
+                baseURL: process.env.WF_REST_URL,
+            }).then((res) => {
+                console.log("Retrieving Context for task" + taskId)
+                resolve(res.data)
+            }).catch((error) => {
+                console.error(error)
+                reject(error)
+            });
+        }
+    })
+}
+
 let CompleteTask = function (taskId) {
     //Mark Task as completed
     return new Promise(function (resolve, reject) {    
