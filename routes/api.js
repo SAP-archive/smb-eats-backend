@@ -71,6 +71,23 @@ router.get('/taskContext', function (req, res) {
    
 });
 
+router.get('/instanceStatus', function (req, res) { 
+    workflow.GetOpenTaskOnInstance(req.query.instanceID).then((data) => {
+        res.statusCode = 200
+        res.setHeader('Content-Type', 'application/json');
+        res.send(data);
+    }).catch((error) => {
+        console.error("Error getting instance status" + error)
+        res.statusCode = 500
+        res.setHeader('Content-Type', 'application/json');
+        if(error.message){
+            error = error.message
+        }
+        res.send({msg: error});
+    })
+   
+});
+
 router.post('/start', function (req, res) { 
     workflow.StartInstance(req.body).then((data) => {
         res.statusCode = 200
