@@ -9,22 +9,24 @@
     xhttp.send();
 
 
-function displayResult(result){
-	// Generic function to display any set of record
-	var data;
-	var json;
-	var line;
-
-	for(var i = 0; i < result.length ; i++){
-		json = result[i];
-		line = "<tr>"
-		for (var property in json) {
-			if (json.hasOwnProperty(property)) {
-				data = json[property];
-				line += "<td>" + JSON.stringify(data) + "</td>";
+	function displayResult(result){
+		// Generic function to display any set of record
+		var data;
+		var json;
+		var line;
+		
+		for(var i = 0; i < result.length ; i++){
+			json = result[i];
+			line = "<tr>"
+			for (var property in json) {
+				if (json.hasOwnProperty(property)) {
+					data = json[property];
+					line += "<td>" + JSON.stringify(data) + "</td>";
+				}
 			}
+			line+= '<td><form method="POST" action="/api/completeTask?&taskId='+json.id+'">'+
+				'<button type="submit" class="btn btn-primary">Ready</button></form></td>'
+			line += "</tr>"
 		}
-		line += "</tr>"
-    }
     document.getElementById("tasks").innerHTML = line
 }

@@ -24,8 +24,8 @@ for(var i = 0; i < result.length ; i++){
             line += "<td>" + JSON.stringify(data) + "</td>";
         }
     }
-    line+= '<td><form method="POST" action="/api/completeTask?&taskId="'+json.id+'>'+
-        '<button type="submit" class="btn btn-primary">Ready</button></form></td>'
+    line+= '<td><form method="POST" action="/api/completeTask?&taskId='+json.id+'">'+
+        '<button type="submit" class="btn btn-primary">On Route</button></form></td>'
     line += "</tr>"
 }
 document.getElementById("tasks").innerHTML = line
