@@ -1,0 +1,72 @@
+body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    background-color: #2B9EB3;
+    color: #DBD5B5;
+}
+
+h1, h2{
+    display: inline;
+    margin-left: 10px;
+}
+
+h1{
+    font-size: 55px;
+}
+
+h2{
+    font-size: 40px;    
+}
+
+table{
+    width: 100%;
+    border-collapse:collapse;
+
+}
+thead{
+    background-color: #F8333C;
+    font-size: 35px;
+    color: #DBD5B5;
+}
+
+th{
+    width: 33%;
+}
+
+td button{
+    width: 50%;
+    height: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    background-color: #2B9EB3;
+    border-color: #2B9EB3;
+    font-size: 25px;
+}
+
+tr:nth-child(even){
+    background-color: #CCCCCC;
+}
+
+td{
+    font-family: monospace;
+    text-align: center;
+    font-size: 25px;
+}
+
+.eats{
+    font-family: cursive;
+}
+
+
+.orders-ready{
+    background-color:4D5382;
+    color: #DBD5B5;
+    padding: 10px;
+}
+

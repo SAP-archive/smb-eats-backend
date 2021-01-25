@@ -1,8 +1,42 @@
 <html>
-    <head><title>Delivery</title></head>
+    <head>
+        <title>🛵 Delivery - ByDEats🍕</title>
+        <link rel="stylesheet" type="text/css" href="/css/delivery.css">
+    </head>
     <body>
-        <h1>Delivery</h1>
-        <table id="tasks"></table>
+        <header>
+            <h1>🛵 Delivery - ByD<span class="eats">Eats</span> 🍕</h1>
+        </header>
+        <div class="orders-ready">
+            <h2 id="orders-ready">#</h2><h2> orders ready for pickup</h2>
+        </div>
+        <div>
+            <table id="meals">
+                <thead>
+                    <th>Order</th>
+                    <th>Time</th>
+                    <th>Collect</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12</td>
+                        <td>Mon 25 Jan 14:57:30 GMT 2021</td>
+                        <td><button>Go! 🛵💨 </button></td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>Mon 25 Jan 14:57:30 GMT 2021</td>
+                        <td><button>Go! 🛵💨</button></td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>Mon 25 Jan 14:57:30 GMT 2021</td>
+                        <td><button>Go! 🛵💨</button></td>
+                    </tr>   
+                </tbody>
+            </table>
+            <table id="tasks"></table>
+        </div>
         <script src="js/delivery.js"></script>
     </body>
 </html>
