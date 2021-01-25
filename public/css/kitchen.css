@@ -26,10 +26,35 @@ h2{
 
 table{
     width: 100%;
+    border-collapse:collapse;
+
 }
 thead{
-    background-color: tomato;
+    background-color: #F8333C;
     font-size: 35px;
+    color: #DBD5B5;
+}
+
+
+td img{
+    width: 50%;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td button{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    font-family: monospace;
+    text-align: center;
+    font-size: 25px;
 }
 
 .eats{
@@ -38,6 +63,9 @@ thead{
 
 .small-cell{
     width: 10%;
+}
+.medium-cell{
+    width: 20%;
 }
 .preparation{
     background-color:teal;
