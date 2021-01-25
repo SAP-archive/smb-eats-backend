@@ -108,4 +108,4 @@ dist
 .vscode/launch.json
 .vscode/launch.json
 
-./set-env.sh
+set-local-env.sh
