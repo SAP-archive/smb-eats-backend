@@ -5,37 +5,32 @@ function checkout(products) {
     }
 
     let body = {
-        b1: {
-            lines: []
-        },
-        byd: {
-            lines: []
+        "recipient": "yatsea.li@sap.com",
+        "orderData": {
+        "CustomerName": "Andres",
+        "Address": "484 St Kilda Rd, Melbourne, VIC 3004, Australia",
+        "ProductID": "SH50021",
+        "Quantity": 1
         }
-    };
+       };
     
     products.forEach(p => {
-        if (p.source === 'b1') {
-            let line = {};
-            line.productid = p.id;
-            line.Quantity = p.quantity;
-            body.b1.lines.push(line);
-        } else if (p.source === 'byd') {
-            let line = {};
-            line.productid = p.id;
-            line.Quantity = p.quantity;
-            body.byd.lines.push(line);
-        }
+        // if (p.source === 'b1') {
+        //     let line = {};
+        //     line.productid = p.id;
+        //     line.Quantity = p.quantity;
+        //     body.b1.lines.push(line);
+        // } else if (p.source === 'byd') {
+        //     let line = {};
+        //     line.productid = p.id;
+        //     line.Quantity = p.quantity;
+        //     body.byd.lines.push(line);
+        // }
     });
-
-    if (body.b1.lines.length === 0) {
-        delete body.b1;
-    } else if (body.byd.lines.length === 0) {
-        delete body.byd;
-    }
 
     console.log(JSON.stringify(body));
     $.ajax({
-            url: 'https://smbmkt.cfapps.eu10.hana.ondemand.com/SalesOrders',
+            url: '../api/start',
             method: 'POST',
             data: JSON.stringify(body),
             // xhrFields: {
@@ -46,30 +41,9 @@ function checkout(products) {
             crossDomain: true
         }).done(function (data) {
             console.log(JSON.stringify(data));
-            let b1_order = data.b1;
-            let byd_order = data.byd;
-            let b1_order_msg = '';
-            if (b1_order && b1_order[0] && b1_order[0].OrderID) {
-                b1_order_msg = `Congratulation. Order#${b1_order[0].OrderID} with amount ${b1_order[0].OrderAmnt} ${b1_order[0].OrderCur} placed.`;
-            }
-
-            let byd_order_msg = '';
-            if (byd_order && byd_order[0] && byd_order[0].OrderID) {
-                let amount = parseFloat(byd_order[0].OrderAmnt).toFixed(2);
-                byd_order_msg = `Order#${byd_order[0].OrderID} with amount ${amount} ${byd_order[0].OrderCur} placed.`;
-            }
-
-            let msg = b1_order_msg;
-            if (b1_order_msg.length > 0 && byd_order_msg.length > 0) {
-                msg = `${b1_order_msg}
-${byd_order_msg}`;
-            } else if (b1_order_msg.length > 0 || byd_order_msg.length > 0) {
-                msg = `${b1_order_msg}${byd_order_msg}`
-            } else {
-                msg = `No order placed.`
-            }
-
-            //alert(msg);
+            localStorage.lastWorkflowId = data.id;
+            let msg = `Order request was sent to the Kitchen with workflow instance id ${data.id}. Please check the status in ticks.`;
+            
             console.log(msg);
             $('#operationSuccessAlert').empty();
             $('#operationSuccessAlert').append(`<p>${msg}</p>`);
