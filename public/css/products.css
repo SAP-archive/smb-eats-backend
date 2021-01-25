@@ -1,0 +1,103 @@
+/**mycart size**/
+.mycart {
+    width: 95%;
+    margin: auto;
+}
+
+#my-cart-table {
+    font-size: 15px;    
+}
+
+.glyphicon {
+    font-size: 60px;
+}
+
+.badge-notify {
+    background: red;
+    position: relative;
+    top: -13px;
+    right: 40px;
+    font-size: 20px;
+}
+
+.my-cart-icon-affix {
+    position: fixed;
+    z-index: 999;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border: 0em;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.bmd-modalButton {
+    display: block;
+    margin: 15px auto;
+    padding: 5px 15px;
+}
+
+.close-button {
+    overflow: hidden;
+}
+
+.bmd-modalContent {
+    box-shadow: none;
+    background-color: transparent;
+    border: 0;
+    width: 90%;
+}
+
+.bmd-modalContent .close {
+    font-size: 30px;
+    line-height: 30px;
+    padding: 7px 4px 7px 13px;
+    text-shadow: none;
+    opacity: .7;
+    color: #fff;
+}
+
+.bmd-modalContent .close span {
+    display: block;
+}
+
+.bmd-modalContent .close:hover,
+.bmd-modalContent .close:focus {
+    opacity: 1;
+    outline: none;
+}
+
+.bmd-modalContent iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+@media(max-width:600px){
+	#main{
+		width:100%;
+		float:none;
+	}
+
+	#sidebar{
+		width:100%;
+		float:none;
+    }
+    
+    .mycart{
+        width: 100%;
+    }
+
+    #my-cart-table {
+        font-size: 25px;    
+    }
+
+    .btn-lg{
+        font-size: 25px;
+    }
+    
+    .alert{
+        font-size: 25px;
+    }
+}
