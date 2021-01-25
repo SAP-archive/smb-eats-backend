@@ -25,7 +25,16 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    font-family: 'Abril Fatface', cursive;
+}
+
+div:hover{
+    cursor:pointer;
+    opacity:85%;
+}
+
+div:active{
+    font-weight: bold;
 }
 
 #div1 {
