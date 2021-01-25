@@ -24,10 +24,21 @@ h2{
     font-size: 40px;    
 }
 
+table{
+    width: 100%;
+}
+thead{
+    background-color: tomato;
+    font-size: 35px;
+}
+
 .eats{
     font-family: cursive;
 }
 
+.small-cell{
+    width: 10%;
+}
 .preparation{
     background-color:teal;
     color: #DBD5B5;
