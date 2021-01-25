@@ -10,6 +10,14 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    font-size: 42px;
+    color: #DBD5B5;
+}
+
+p {
+    position: relative;
+}
 div {
     width: 50%;
     height: 50%;
@@ -17,6 +25,7 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 #div1 {
@@ -28,7 +37,7 @@ div {
 }
 
 #div3 {
-    background:#FCAB10;
+    background:#4D5382;
 }
 
 #div4 {
