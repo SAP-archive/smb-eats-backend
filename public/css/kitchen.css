@@ -1,0 +1,35 @@
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    
+}
+
+header{
+    background-color: #4D5382;
+    color: #DBD5B5;
+}
+
+h1, h2{
+    display: inline;
+    margin-left: 10px;
+
+}
+
+h1{
+    font-size: 55px;
+}
+
+h2{
+    font-size: 40px;    
+}
+
+.eats{
+    font-family: cursive;
+}
+
+.preparation{
+    background-color:teal;
+    color: #DBD5B5;
+    padding: 10px;
+}
