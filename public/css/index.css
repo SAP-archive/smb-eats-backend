@@ -37,18 +37,18 @@ div:active{
     font-weight: bold;
 }
 
-#div1 {
+#customer-div {
     background: #44af69;
 }
 
-#div2 {
+#agent-div {
     background: #F8333C;
 }
 
-#div3 {
+#kitchen-div {
     background:#4D5382;
 }
 
-#div4 {
+#delivery-div {
     background: #2B9EB3;
 }
