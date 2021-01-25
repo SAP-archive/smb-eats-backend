@@ -3,7 +3,7 @@
     <body>
         <div><h1>Place an Order 😋</h1></div>
         <div>
-            <form class="form">
+            <form class="form" action="/api/start" method="POST">
                 <label for="recipient">Recipient:</label><br>
                 <input type="text" id="recipient" name="recipient" value="Thiago"><br>
                 <label for="CustomerName">Customer Name:</label><br>
@@ -13,10 +13,8 @@
                 <label for="ProductID">Product ID</label><br>
                 <input type="text" id="ProductID" name="ProductID" value="SH50021"><br><br>
                 <div class="col-12">
-                    <button class="btn btn-primary">Submit form</button>
-                </div>
+                    <button type="submit" onclick="startFlow();">show</button>                </div>
               </form> 
-              
         </div>
         <script src="js/customer.js"></script>
     </body>
