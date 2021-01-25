@@ -109,3 +109,4 @@ dist
 .vscode/launch.json
 
 set-local-env.sh
+.DS_Store
