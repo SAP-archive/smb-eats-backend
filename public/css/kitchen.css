@@ -45,10 +45,19 @@ td img{
 }
 
 td button{
-    width: 80%;
+    width: 70%;
+    height: 40px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    color: #fff;
+    background-color: #2B9EB3;
+    border-color: #2B9EB3;
+    font-size: 25px;
+}
+
+tr:nth-child(even) {
+    background-color: #CCCCCC;
 }
 
 td {
@@ -72,3 +81,4 @@ td {
     color: #DBD5B5;
     padding: 10px;
 }
+
