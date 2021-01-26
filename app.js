@@ -32,6 +32,10 @@ app.get('/kitchen', function (req, res) {
 app.get('/delivery', function (req, res) {
     res.sendFile(path.join(__dirname, 'views/delivery.html'));
 })
+
+app.get('/route', function (req, res) {
+    res.sendFile(path.join(__dirname, 'views/route.html'));
+})
  
 app.listen(port, function () {
     console.log('ByD Eats listening on port ' + port);
