@@ -37,6 +37,18 @@ th{
     width: 33%;
 }
 
+footer button{
+    width: 100%;
+    height:8%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    background-color: #F8333C;
+    border-color: #000000;
+    font-size: 30px;
+}
+
 td button{
     width: 50%;
     height: 40px;
@@ -69,4 +81,23 @@ td{
     color: #DBD5B5;
     padding: 10px;
 }
+
+
+.map-responsive{
+
+    width:100%;
+    height: 80%;
+
+
+}
+
+.map-responsive iframe{
+    width: 100%;
+    height: 100%;
+}
+ 
+
+
+ 
+
 
