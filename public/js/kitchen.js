@@ -41,8 +41,9 @@ function completeTask(id){
 		contentType: "application/json", 
 		success: function(res, status){
 		  console.log("task "+id+" comepleted")
-		  $('#'+id).remove()
-		  loadOpenTasks()
+		  $('#'+id).fadeOut(300, function(){
+			loadOpenTasks()
+		  })
 		},
 		error: function(error){
 			alert("error - "+error)
