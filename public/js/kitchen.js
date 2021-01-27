@@ -1,10 +1,14 @@
 var user = "kitchen"
 $(document).ready(function(){  
+
+	$("table").on("click", "button", function( event ) {
+		completeTask(this.id)
+	});
+
+	
 	loadOpenTasks()
 
 })
-
-
 
 function loadOpenTasks(){
 	$.get("api/tasks?user="+user, function(response){
@@ -28,5 +32,21 @@ function displayResult(result){
 	});
 	$("tbody").html(line)
 	$("#prepOrders").text(result.length)
+}
+
+function completeTask(id){
+	$.ajax({
+		type: "POST",
+		url: "api/completeTask?taskId="+id,
+		contentType: "application/json", 
+		success: function(res, status){
+		  console.log("task "+id+" comepleted")
+		  $('#'+id).remove()
+		  loadOpenTasks()
+		},
+		error: function(error){
+			alert("error - "+error)
+		}
+	});
 }
 
