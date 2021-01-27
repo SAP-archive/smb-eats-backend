@@ -3,19 +3,23 @@
     <body>
         <div><h1>Place an Order 😋</h1></div>
         <div>
-            <form class="form" action="/api/start" method="POST">
-                <label for="recipient">Recipient:</label><br>
-                <input type="text" id="recipient" name="recipient" value="Thiago"><br>
-                <label for="CustomerName">Customer Name:</label><br>
+            <form class="form" action="" method="" id="orderForm">
+                <label for="recipient">Recipient:</label>
+                <input type="text" id="recipient" name="recipient" value="@sap.com"><br>
+                <label for="CustomerName">Customer Name:</label>
                 <input type="text" id="CustomerName" name="CustomerName" value="John"><br>
-                <label for="Address">Post Code</label><br>
+                <label for="Address">Post Code</label>
                 <input type="text" id="Address" name="Address" value="SW1A 1AA"><br>
-                <label for="ProductID">Product ID</label><br>
+                <label for="ProductID">Product ID</label>
                 <input type="text" id="ProductID" name="ProductID" value="SH50021"><br><br>
-                <div class="col-12">
-                    <button type="submit" onclick="startFlow();">show</button>                </div>
+                <label for="Remarks">Remarks</label>
+                <textarea name="Remarks" form="orderForm">Enter text here...</textarea>                
               </form> 
+              <button onclick="startFlow();">Place order!</button>               
         </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" 
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" 
+        crossorigin="anonymous"></script>
         <script src="js/customer.js"></script>
     </body>
 </html>
