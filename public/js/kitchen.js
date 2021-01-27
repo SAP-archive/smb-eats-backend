@@ -1,32 +1,32 @@
-    var user = "kitchen"
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        displayResult(JSON.parse(this.response))
-        }
-    };
-    xhttp.open("GET", "api/tasks?user="+user, true);
-    xhttp.send();
+var user = "kitchen"
+$(document).ready(function(){  
+	loadOpenTasks()
+
+	
+})
 
 
-	function displayResult(result){
-		// Generic function to display any set of record
-		var data;
-		var json;
-		var line;
-		
-		for(var i = 0; i < result.length ; i++){
-			json = result[i];
-			line = "<tr>"
-			for (var property in json) {
-				if (json.hasOwnProperty(property)) {
-					data = json[property];
-					line += "<td>" + JSON.stringify(data) + "</td>";
-				}
-			}
-			line+= '<td><form method="POST" action="/api/completeTask?&taskId='+json.id+'">'+
-				'<button type="submit" class="btn btn-primary">Ready</button></form></td>'
-			line += "</tr>"
-		}
-    document.getElementById("tasks").innerHTML = line
+
+function loadOpenTasks(){
+	$.get("api/tasks?user="+user, function(response){
+		displayResult(response)
+	})
 }
+
+function displayResult(result){
+	// Generic function to display any set of record
+	var line = '';
+
+	result.forEach(task => {
+		var order = task.id
+		line+= '<tr id="'+task.id+'">'
+		line+= '<td><img class="td-image" src="https://i.imgur.com/8sDH9VB.png" alt="pizza"></td>'
+		line+= '<td>'+order.substring(0,8)+'</td>' 
+		line+= '<td>'+task.createdAt+'</td>' 
+		line+= '<td>Task Description Task Description </td>' 
+		line+= '<td><button id="'+task.id+'>Ready for 🛵 </button></td>'
+		line+= '</tr>'
+	});
+	$("tbody").html(line)
+}
+
