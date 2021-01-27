@@ -2,7 +2,6 @@ var user = "kitchen"
 $(document).ready(function(){  
 	loadOpenTasks()
 
-	
 })
 
 
@@ -24,9 +23,10 @@ function displayResult(result){
 		line+= '<td>'+order.substring(0,8)+'</td>' 
 		line+= '<td>'+task.createdAt+'</td>' 
 		line+= '<td>Task Description Task Description </td>' 
-		line+= '<td><button id="'+task.id+'>Ready for 🛵 </button></td>'
+		line+= '<td><button id="'+task.id+'">Ready for 🛵 </button></td>'
 		line+= '</tr>'
 	});
 	$("tbody").html(line)
+	$("#prepOrders").text(result.length)
 }
 
