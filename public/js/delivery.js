@@ -1,32 +1,46 @@
 var user = "delivery"
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-    displayResult(JSON.parse(this.response))
-    }
-};
-xhttp.open("GET", "api/tasks?user="+user, true);
-xhttp.send();
+$(document).ready(function(){  
 
+	$("table").on("click", "button", function( event ) {
+		completeTask(this.id, this.className)
+	});
+	loadOpenTasks()
 
+})
+function loadOpenTasks(){
+	$.get("api/tasks?user="+user, function(response){
+		displayResult(response)
+	})
+}
 function displayResult(result){
-// Generic function to display any set of record
-var data;
-var json;
-var line;
+	// Generic function to display any set of record
+	var line = '';
 
-for(var i = 0; i < result.length ; i++){
-    json = result[i];
-    line = "<tr>"
-    for (var property in json) {
-        if (json.hasOwnProperty(property)) {
-            data = json[property];
-            line += "<td>" + JSON.stringify(data) + "</td>";
-        }
-    }
-    line+= '<td><form method="POST" action="/api/completeTask?&taskId='+json.id+'">'+
-        '<button type="submit" class="btn btn-primary">On Route</button></form></td>'
-    line += "</tr>"
+	result.forEach(task => {
+		var order = task.id
+        line+= '<tr id="'+task.id+'">'
+        line+= '<td>'+order.substring(0,8)+'</td>' 
+        line+= '<td>'+task.context.orderData.CustomerName+'</td>' 
+		line+= '<td>'+task.createdAt+'</td>' 
+		line+= '<td><button id="'+task.id+'" class="'+task.workflowInstanceId+'">Go! 🛵💨</button></td>'
+		line+= '</tr>'
+	});
+	$("tbody").html(line)
+	$("#orders-ready").text(result.length)
 }
-document.getElementById("tasks").innerHTML = line
+
+function completeTask(id, workflow){
+	$.ajax({
+		type: "POST",
+		url: "api/completeTask?taskId="+id+"&instanceID="+workflow,
+		contentType: "application/json", 
+		success: function(res, status){
+          console.log("task "+id+" comepleted")
+          window.location.href="/route?taskId="+res[0].id; 
+		},
+		error: function(error){
+			alert("error - "+error)
+		}
+	});
 }
+
