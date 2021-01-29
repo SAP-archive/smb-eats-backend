@@ -39,9 +39,9 @@ let StartInstance = function (context) {
         }).then((res) => {
             console.log("Instance "+res.data.id+ " Created Successfully")
             resolve(res.data)
-        }).catch((error) => {
-            console.error(error)
-            reject(error)
+        }).catch((err) => {
+            handleResponseError(err)
+            reject(err)
         });
     })
 }
@@ -76,9 +76,9 @@ let GetTasks = function (user) {
                 Promise.all(getTaskContext).then((newdata) => {
                     resolve(newdata)
                 });;                
-            }).catch((error) => {
-                console.error(error)
-                reject(error)
+            }).catch((err) => {
+                handleResponseError(err)
+                reject(err)
             });
         }
     })
@@ -99,9 +99,9 @@ let GetOpenTaskOnInstance = function (instanceID) {
         }).then((res) => {
             console.log("Retrieving Task from Workflow WF instance " + instanceID)
             resolve(res.data)
-        }).catch((error) => {
-            console.error(error)
-            reject(error)
+        }).catch((err) => {
+            handleResponseError(err)
+            reject(err)
         });
     })
 
@@ -123,9 +123,9 @@ let GetTaskContext = function (task) {
                 var newData = task
                 newData.context = res.data
                 resolve(newData)
-            }).catch((error) => {
-                console.error(error)
-                reject(error)
+            }).catch((err) => {
+                handleResponseError(err)
+                reject(err)
             });
         }
     })
@@ -145,9 +145,9 @@ let CompleteTask = function (taskId) {
             }).then((res) => {
                 console.log("Task "+ taskId + " completed!")
                 resolve(res.data)
-            }).catch((error) => {
-                console.error(error)
-                reject(error)
+            }).catch((err) => {
+                handleResponseError(err)
+                reject(err)
             });
         }
     })
@@ -193,5 +193,16 @@ function convertUserToActivity(user) {
             return null;
     }
 }
+
+function handleResponseError(err){
+    console.error(err);
+
+    if (err.response.status == 401){
+        //Token Expired
+        console.log("Getting new token")
+        getAccessToken()
+    }
+}
+
 //First request to have the Oauth token saved
 getAccessToken()
