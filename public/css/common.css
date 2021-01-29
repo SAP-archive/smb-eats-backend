@@ -1,7 +1,64 @@
-/* .btn-lg{
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    
+}
+
+h1, h2{
+    display: inline;
+    margin-left: 10px;
+}
+
+h1{
+    font-size: 4vw;
+}
+
+h2{
+    font-size: 3vw;    
+}
+
+table{
+    width: 100%;
+    border-collapse:collapse;
+
+}
+thead{
+    background-color: #F8333C;
+    font-size: 2vw;
+    color: #DBD5B5;
+}
+
+td img{
+    width: 50%;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td button{
+    width: 70%;
+    height: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    background-color: #2B9EB3;
+    border-color: #2B9EB3;
     font-size: 25px;
 }
 
-.alert{
-    font-size: 25px;
-} */
+tr:nth-child(even) {
+    background-color: #CCCCCC;
+}
+
+td {
+    font-family: monospace;
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+.eats{
+    font-family: cursive;
+}
