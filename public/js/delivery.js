@@ -38,7 +38,7 @@ function completeTask(id, workflow){
 		contentType: "application/json", 
 		success: function(res, status){
           console.log("task "+id+" comepleted")
-          window.location.href="/route?taskId="+res[0].id; 
+          window.location.href="/route?taskId="+res[0].id+"&instanceID="+workflow 
 		},
 		error: function(error){
 			alert("error - "+error)
