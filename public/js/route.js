@@ -5,8 +5,12 @@ $.get("api/taskContext?taskId="+searchParams.get('taskId'), function(response){
 })
 
 $(document).ready(function(){  
-	$("button").on("click", "button", function( event ) {
-		completeTask(this.id)
+	$( ".delivery-button" ).click(function() {
+		completeTask(searchParams.get('taskId'))
+	});
+	
+	$( ".modal-button" ).click(function() {
+		window.location.href="/delivery"
 	});
 })
 
@@ -18,14 +22,13 @@ function displayResult(result){
 	}
 }
 
-function completeTask(id, workflow){
+function completeTask(id){
 	$.ajax({
 		type: "POST",
-		url: "api/completeTask?taskId="+id+"&instanceID="+workflow,
+		url: "api/completeTask?taskId="+id,
 		contentType: "application/json", 
 		success: function(res, status){
-          console.log("task "+id+" comepleted")
-          window.location.href="/route?taskId="+res[0].id; 
+			$(".modal").toggleClass("show-modal")
 		},
 		error: function(error){
 			alert("error - "+error)
