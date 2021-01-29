@@ -24,7 +24,7 @@ function displayResult(result){
 	var line = '';
 
 	result.forEach(task => {
-		var order = task.id
+		var order = task.workflowInstanceId
 		line+= '<tr id="'+task.id+'">'
 		line+= '<td><img class="td-image" src="/pics/'+task.context.orderData.ProductID+'.png" alt="Pizza Img"></td>'
 		line+= '<td>'+order.substring(0,8)+'</td>' 
