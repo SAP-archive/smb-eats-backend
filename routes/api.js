@@ -105,14 +105,14 @@ router.post('/start', function (req, res) {
 });
 
 function formatTasks(tasks){
-    var formattedTasks = []
-    tasks.forEach(element => {
-        item = {
-            id: element.id, 
-            createdAt: element.createdAt, 
-            subject:element.subject,
-            workflowInstanceId:element.workflowInstanceId}
-            formattedTasks.push(item)
-    });
-    return formattedTasks;
+    // var formattedTasks = []
+    // tasks.forEach(element => {
+    //     item = {
+    //         id: element.id, 
+    //         createdAt: element.createdAt, 
+    //         subject:element.subject,
+    //         workflowInstanceId:element.workflowInstanceId}
+    //         formattedTasks.push(item)
+    // });
+    return tasks;
 }
