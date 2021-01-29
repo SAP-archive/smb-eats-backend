@@ -8,6 +8,8 @@ body {
 h1, h2{
     display: inline;
     margin-left: 10px;
+    font-family: sans-serif;
+
 }
 
 h1{
@@ -21,6 +23,7 @@ h2{
 table{
     width: 100%;
     border-collapse:collapse;
+    font-family: sans-serif;
 
 }
 thead{
