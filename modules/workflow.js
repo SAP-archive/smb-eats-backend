@@ -53,6 +53,7 @@ let GetTasks = function (user) {
         if (!activityId) {
             reject("Invalid User - " + user)
         }else{
+            console.log("Retrieving Tasks from Workflow for User " + user)
             axios.request({
                 url: "/v1/task-instances",
                 method: "GET",
@@ -62,8 +63,19 @@ let GetTasks = function (user) {
                     "activityId": activityId
                 }
             }).then((res) => {
-                console.log("Retrieving Tasks from Workflow for User " + user)
-                resolve(res.data)
+                var tasks = res.data
+
+                console.log(tasks.length +" Tasks open for user " + user)
+                console.log("Retrieving Context for each task")
+
+                var getTaskContext = []
+                tasks.forEach(task => {
+                    getTaskContext.push(GetTaskContext(task))
+                })
+                
+                Promise.all(getTaskContext).then((newdata) => {
+                    resolve(newdata)
+                });;                
             }).catch((error) => {
                 console.error(error)
                 reject(error)
@@ -95,20 +107,22 @@ let GetOpenTaskOnInstance = function (instanceID) {
 
 }
 
-let GetTaskContext = function (taskId) {
-    //fetch the context (user data) of a task
+let GetTaskContext = function (task) {
+    //fetch the context (user data) of a task (retrieved by GetTasks)
     //In this case, name, address, etc..
     return new Promise(function (resolve, reject) {      
-        if (!taskId) {
-            reject("Invalid Task ID - " + taskId)
+        if (!task.id) {
+            reject("Invalid Task ID - " + task.id)
         }else{
             axios.request({
-                url: "/v1/task-instances/"+taskId+"/context",
+                url: "/v1/task-instances/"+task.id+"/context",
                 method: "GET",
                 baseURL: process.env.WF_REST_URL,
             }).then((res) => {
-                console.log("Retrieving Context for task" + taskId)
-                resolve(res.data)
+                console.log("Context retrievd for task " + task.id)
+                var newData = task
+                newData.context = res.data
+                resolve(newData)
             }).catch((error) => {
                 console.error(error)
                 reject(error)
