@@ -1,12 +1,12 @@
 const express = require('express')
 const workflow = require('../modules/workflow');
+const erp = require('../modules/erp');
 const router = express.Router();
 
 router.get('/', (req,res) => res.send('<h1>ByD Eats 🍕 Workflow API</h1>'));
 
 module.exports = router
 
-//EndPoint To retrieve BusinessPartners from ERP
 router.get('/tasks', function (req, res) { 
     workflow.GetTasks(req.query.user).then((data) => {
         res.statusCode = 200
@@ -102,6 +102,22 @@ router.post('/start', function (req, res) {
         }
         res.send({msg: error});
     })
+});
+
+router.get('/items', function (req, res) { 
+    erp.GetItems().then((data) => {
+        res.statusCode = 200
+        res.setHeader('Content-Type', 'application/json');
+        res.send(data);
+    }).catch((error) => {
+        console.error("Error getting Items context" + error)
+        res.statusCode = 500
+        res.setHeader('Content-Type', 'application/json');
+        if(error.message){
+            error = error.message
+        }
+    })
+   
 });
 
 function formatTasks(tasks){
