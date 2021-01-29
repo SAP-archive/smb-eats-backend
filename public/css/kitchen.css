@@ -1,22 +1,8 @@
-body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    
-}
-
 header{
     background-color: #4D5382;
     color: #DBD5B5;
 }
 
-
-.small-cell{
-    width: 10%;
-}
-.medium-cell{
-    width: 20%;
-}
 .preparation{
     background-color:teal;
     color: #DBD5B5;

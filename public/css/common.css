@@ -65,3 +65,10 @@ td {
 .eats{
     font-family: cursive;
 }
+
+.small-cell{
+    width: 10%;
+}
+.medium-cell{
+    width: 20%;
+}
