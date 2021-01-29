@@ -87,7 +87,8 @@ let GetTasks = function (user) {
 let GetOpenTaskOnInstance = function (instanceID) {
     //Fetch all open (READY) task instances for a given workflow(id)
     //This should be the last task (Rider going to deliver)
-    return new Promise(function (resolve, reject) {           
+    return new Promise(function (resolve, reject) {    
+        console.log("Retrieving Open task on Worfklow Instance "+instanceID)       
         axios.request({
             url: "/v1/task-instances",
             method: "GET",
@@ -97,7 +98,13 @@ let GetOpenTaskOnInstance = function (instanceID) {
                 "workflowInstanceId": instanceID
             }
         }).then((res) => {
-            console.log("Retrieving Task from Workflow WF instance " + instanceID)
+            console.log("Found "+res.data.length +  " Open tasks on WF instance "+ instanceID)
+            if(res.data.length == 0){
+                console.log("RETRYING!!")
+                resolve(GetOpenTaskOnInstance(instanceID))
+            }else{
+                resolve(res.data)
+            }
             resolve(res.data)
         }).catch((err) => {
             handleResponseError(err)

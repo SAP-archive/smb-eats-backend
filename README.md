@@ -1,3 +1,4 @@
+![CI](https://github.com/SAP-samples/byd-eats-backend/workflows/CI/badge.svg)
 # Title
 
 ## Description
