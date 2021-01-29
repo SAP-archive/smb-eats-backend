@@ -110,24 +110,39 @@ let GetOpenTaskOnInstance = function (instanceID) {
 let GetTaskContext = function (task) {
     //fetch the context (user data) of a task (retrieved by GetTasks)
     //In this case, name, address, etc..
-    return new Promise(function (resolve, reject) {      
-        if (!task.id) {
-            reject("Invalid Task ID - " + task.id)
+    return new Promise(function (resolve, reject) {    
+        
+        var taskDetails;
+        var taskId;
+
+        if(task.id){
+            taskDetails = task;
+            taskId = task.id
         }else{
-            axios.request({
-                url: "/v1/task-instances/"+task.id+"/context",
-                method: "GET",
-                baseURL: process.env.WF_REST_URL,
-            }).then((res) => {
-                console.log("Context retrievd for task " + task.id)
-                var newData = task
-                newData.context = res.data
-                resolve(newData)
-            }).catch((err) => {
-                handleResponseError(err)
-                reject(err)
-            });
+            if (task){
+                taskId = task
+            }else{
+                reject("Invalid Task ID - " + task.id)
+                return
+            }
         }
+        axios.request({
+            url: "/v1/task-instances/"+taskId+"/context",
+            method: "GET",
+            baseURL: process.env.WF_REST_URL,
+        }).then((res) => {
+            console.log("Context retrievd for task " + taskId)
+            var newData = {}
+            if (taskDetails){
+                newData = taskDetails
+            }
+            newData.context = res.data
+            resolve(newData)
+        }).catch((err) => {
+            handleResponseError(err)
+            reject(err)
+        });
+    
     })
 }
 
