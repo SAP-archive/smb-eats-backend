@@ -23,7 +23,7 @@ function displayResult(result){
 	result.forEach(task => {
 		var order = task.id
 		line+= '<tr id="'+task.id+'">'
-		line+= '<td><img class="td-image" src="https://i.imgur.com/8sDH9VB.png" alt="pizza"></td>'
+		line+= '<td><img class="td-image" src="/pics/'+task.context.orderData.ProductID+'.jpg" alt="Pizza Img"></td>'
 		line+= '<td>'+order.substring(0,8)+'</td>' 
 		line+= '<td>'+task.createdAt+'</td>' 
 		line+= '<td>Task Description Task Description </td>' 
