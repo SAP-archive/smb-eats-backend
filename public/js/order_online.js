@@ -57,18 +57,8 @@ $(function () {
     data-source="${product.source}" data-price="${product.price}" data-quantity="1" data-image="${product.image}">Add to Cart</button>
   </div>`;
     };
-  
-  let selectedProduct = {
-    "productid": "A00001",
-    "name": "Pepperoni Pizza",
-    "score": 1.0,
-    "image": "https://cdn.tasteatlas.com/images/dishes/b05a0af72ad845f3a6abe16143d7853a.jpg?w=600&h=450",
-    "price": 16,
-    "priceCurrency": "$",
-    "inventoryLevel": 100
-  };
 
-  let similarProducts = 
+  let listedProducts = 
   [{
     "productid": "A00001",
     "name": "Pepperoni Pizza",
@@ -88,9 +78,18 @@ $(function () {
       "inventoryLevel": 100
     },
     {
-      "productid": "A00001",
+      "productid": "A00003",
       "name": "Meat Lover",
       "image": "https://i.pinimg.com/originals/3b/8e/b6/3b8eb6a7dee5fe35fad8fdd37a784b2c.jpg",
+      "score": 1.0,
+      "price": 18,
+      "priceCurrency": "$",
+      "inventoryLevel": 100
+    },
+    {
+      "productid": "A00004",
+      "name": "Veggie Lover",
+      "image": "https://i.pinimg.com/originals/5f/f3/3d/5ff33d7df72e71d8755784135a6e6edd.png",
       "score": 1.0,
       "price": 18,
       "priceCurrency": "$",
@@ -105,22 +104,22 @@ $(function () {
   //   </div>`);
   // }
 
-  //let similarProducts = <%- JSON.stringify(similarProducts); %>;
-  if (similarProducts && similarProducts.length > 0) {
+  //let listedProducts = <%- JSON.stringify(listedProducts); %>;
+  if (listedProducts && listedProducts.length > 0) {
     $('#body').append(
     `<div class="row" id="SimilarProductLabel">
       <p class="text-left"><h1><strong>Pizzas:</strong></h1></p>
     </div>`);
   }
 
-  if (similarProducts && similarProducts.length > 0) {
+  if (listedProducts && listedProducts.length > 0) {
     $('#body').append(
-    `<div id="SimilarProducts" class="row">
+    `<div id="listedProducts" class="row">
     </div>`);
   }
       
-  similarProducts.forEach(product => {
-    $('#SimilarProducts').append(generateProductHtml(product))
+  listedProducts.forEach(product => {
+    $('#listedProducts').append(generateProductHtml(product))
   });
   
   ////////////////google map///////////
