@@ -29,7 +29,11 @@ function displayResult(result){
 		line+= '<td><img class="td-image" src="/pics/'+task.context.orderData.ProductID+'.png" alt="Pizza Img"></td>'
 		line+= '<td>'+order.substring(0,8)+'</td>' 
 		line+= '<td>'+task.createdAt+'</td>' 
-		line+= '<td>'+items[task.context.orderData.ProductID].Description+'</td>' 
+		if(items[task.context.orderData.ProductID]){
+			line+= '<td>'+items[task.context.orderData.ProductID].Description+'</td>' 
+		}else{
+			line+= '<td> Invalid item '+task.context.orderData.ProductID+'</td>' 
+		}
 		line+= '<td><button id="'+task.id+'">Ready for 🛵 </button></td>'
 		line+= '</tr>'
 	});
