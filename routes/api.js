@@ -1,6 +1,7 @@
 const express = require('express')
 const workflow = require('../modules/workflow');
 const erp = require('../modules/erp');
+const map = require('../modules/map');
 const router = express.Router();
 
 router.get('/', (req,res) => res.send('<h1>ByD Eats 🍕 Workflow API</h1>'));
@@ -118,6 +119,22 @@ router.get('/items', function (req, res) {
         }
     })
    
+});
+
+router.get('/map', function (req, res) { 
+    map.GetPlace(req.query.address).then((data) => {
+        res.statusCode = 200
+        res.setHeader('Content-Type', 'application/json');
+        res.send(data);
+    }).catch((error) => {
+        console.error("Error getting Map Place" + error)
+        res.statusCode = 500
+        res.setHeader('Content-Type', 'application/json');
+        if(error.message){
+            error = error.message
+        }
+        res.send({msg: error});
+    })
 });
 
 function formatTasks(tasks){
