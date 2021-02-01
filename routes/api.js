@@ -123,6 +123,9 @@ router.get('/items', function (req, res) {
 
 router.get('/map', function (req, res) { 
     map.GetPlace(req.query.address).then((data) => {
+        if(!data){
+            throw new Error("Invalid Address")
+        }
         res.statusCode = 200
         res.setHeader('Content-Type', 'application/json');
         res.send(data);
