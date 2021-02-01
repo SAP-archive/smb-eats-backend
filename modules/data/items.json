@@ -1,14 +1,17 @@
 {
-    "SH50021":{
+    "PZ00001":{
+        "Description": "Cheese Pizza"
+    },
+    "PZ00002":{
         "Description": "Pepperoni Pizza"
     },
-    "SH50022":{
-        "Description": "Meat Pizza"
-    },
-    "SH50023":{
-        "Description": "Veggie Pizza"
-    },
-    "SH50024":{
+    "PZ00003":{
         "Description": "Margherita Pizza"
+    },
+    "PZ00004":{
+        "Description": "Veggie Lover Pizza"
+    },
+    "PZ00005":{
+        "Description": "Meat Lover Pizza"
     }
 }
