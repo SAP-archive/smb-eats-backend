@@ -21,13 +21,14 @@ function displayResult(result){
 		$.get("api/map?address="+result.context.orderData.Address, function(response){
 			displayMap(response)
 		}).fail(function() {
+			$(".map-responsive h2").show()
 			$(".map-responsive h2").text("Can't load Map at the moment - Verify address "+result.context.orderData.Address )
 		})
 	}
 }
 
 function displayMap(result){
-	$(".map-responsive h1").text("")
+	$(".map-responsive h2").hide()
 	
 	var mapsQuery = result.formatted_address
 	var placeId = result.place_id
