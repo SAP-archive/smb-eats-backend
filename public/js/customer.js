@@ -4,6 +4,7 @@ function startFlow() {
     recipient: $("#recipient").val(),
     orderData: {
         CustomerName: $("#CustomerName").val(),
+        CustomerEmail: $("#recipient").val(), //just for demo purposes
         Address: $("#Address").val(),
         ProductID: $("#ProductID").val()
     }
