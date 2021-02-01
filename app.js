@@ -38,5 +38,5 @@ app.get('/route', function (req, res) {
 })
  
 app.listen(port, function () {
-    console.log('ByD Eats listening on port ' + port);
+    console.log('SMB Eats listening on port ' + port);
 });

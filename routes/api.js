@@ -4,7 +4,7 @@ const erp = require('../modules/erp');
 const map = require('../modules/map');
 const router = express.Router();
 
-router.get('/', (req,res) => res.send('<h1>ByD Eats 🍕 Workflow API</h1>'));
+router.get('/', (req,res) => res.send('<h1>SMB Eats 🍕 Workflow API</h1>'));
 
 module.exports = router
 
