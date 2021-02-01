@@ -4,6 +4,8 @@
 ## Description
 
 ## Requirements
+cf services 
+cf update-service wm_workflow -c '{"authorities": ["WORKFLOW_DEFINITION_GET", "WORKFLOW_INSTANCE_START", "WORKFLOW_INSTANCE_GET", "TASK_GET", "TASK_GET_CONTEXT", "TASK_COMPLETE", "TASK_UPDATE"]}'
 
 ## Download and Installation
 
