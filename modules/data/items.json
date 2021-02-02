@@ -1,17 +1,27 @@
-{
-    "PZ00001":{
-        "Description": "Cheese Pizza"
+[
+    {
+        "ProductID": "PZ00001",
+        "Description": "Cheese Pizza",
+        "ImageUrl": "https://byd-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00001.png"
     },
-    "PZ00002":{
-        "Description": "Pepperoni Pizza"
+    {
+        "ProductID": "PZ00002",
+        "Description": "Pepperoni Pizza",
+        "ImageUrl": "https://byd-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00002.png"
     },
-    "PZ00003":{
-        "Description": "Margherita Pizza"
+    {
+        "ProductID": "PZ00003",
+        "Description": "Margherita Pizza",
+        "ImageUrl": "https://byd-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00003.png"
     },
-    "PZ00004":{
-        "Description": "Veggie Lover Pizza"
+    {
+        "ProductID": "PZ00004",
+        "Description": "Veggie Lover Pizza",
+        "ImageUrl": "https://byd-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00004.png"
     },
-    "PZ00005":{
-        "Description": "Meat Lover Pizza"
+    {
+        "ProductID": "PZ00005",
+        "Description": "Meat Lover Pizza",
+        "ImageUrl": "https://byd-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00005.png"
     }
-}
+]

@@ -118,7 +118,30 @@ router.get('/items', function (req, res) {
             error = error.message
         }
     })
-   
+});
+
+router.get('/item/:itemName', function (req, res) { 
+    let itemName = req.params.itemName;
+    res.setHeader('Content-Type', 'application/json');
+    if(!itemName || typeof itemName === 'undefined')
+    {
+        res.statusCode = 500;
+        res.json({ error: "No query param itemName found"});
+        return;
+    }
+
+    erp.GetItemDetail(itemName).then((data) => {
+        res.statusCode = 200;
+        
+        res.send(data);
+    }).catch((error) => {
+        console.error("Error getting Item context" + error)
+        res.statusCode = 500;
+
+        if(error.message){
+            error = error.message;
+        }
+    })
 });
 
 router.get('/map', function (req, res) { 

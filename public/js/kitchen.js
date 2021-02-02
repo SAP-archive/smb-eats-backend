@@ -29,8 +29,9 @@ function displayResult(result){
 		line+= '<td><img class="td-image" src="/pics/'+task.context.orderData.ProductID+'.png" alt="Pizza Img"></td>'
 		line+= '<td>'+order.substring(0,8)+'</td>' 
 		line+= '<td>'+task.createdAt+'</td>' 
-		if(items[task.context.orderData.ProductID]){
-			line+= '<td>'+items[task.context.orderData.ProductID].Description+'</td>' 
+		let filteredItem = items.filter(item => item.ProductID === task.context.orderData.ProductID);
+		if(filteredItem.length > 0){
+			line+= '<td>'+filteredItem[0].Description+'</td>' 
 		}else{
 			line+= '<td> Invalid item '+task.context.orderData.ProductID+'</td>' 
 		}
