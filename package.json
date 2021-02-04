@@ -1,5 +1,5 @@
 {
-  "name": "byd-eats-backend",
+  "name": "smb-eats-backend",
   "version": "1.0.0",
   "description": "Backend for SMB-eats a prototype that uses SCP Workflow",
   "main": "app.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SAP-samples/byd-eats-backend.git"
+    "url": "git+https://github.com/SAP-samples/smb-eats-backend.git"
   },
   "keywords": [
     "scp",
@@ -20,9 +20,9 @@
   "author": "@Ralphive",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/SAP-samples/byd-eats-backend/issues"
+    "url": "https://github.com/SAP-samples/smb-eats-backend/issues"
   },
-  "homepage": "https://github.com/SAP-samples/byd-eats-backend#readme",
+  "homepage": "https://github.com/SAP-samples/smb-eats-backend#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
