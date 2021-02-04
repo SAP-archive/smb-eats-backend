@@ -11,20 +11,42 @@
                 <h2>Choose how to place your order</h2>
             </div>
         </header>
-        <div class="div-form">
-            <form class="form" action="" method="" id="orderForm">
-                <input type="text" id="recipient" name="recipient" value="@sap.com" placeholder="email"><br>
-                <input type="text" id="CustomerName" name="CustomerName" value="John" placeholder="Customer Name"><br>
-                <input type="text" id="Address" name="Address" value="SW1A 1AA" placeholder="Delivery Address"><br>
-                    <select id="ProductID" name="ProductID">
-                        <option value="PZ00001">Cheese</option>
-                        <option value="PZ00002">Pepperoni</option>
-                        <option value="PZ00003">Margherita</option>
-                        <option value="PZ00004">Veggie</option>
-                        <option value="PZ00005">Meat</option>
-                    </select>
-                </form> 
-                <button onclick="startFlow();">Place order!</button>               
+        <a href="https://www.facebook.com/messages/t/100640892061736/" target="_blank">
+            <div class="div-tile" id="facebook-div">
+                <h1>Facebook bot🤖</h1> 
+            </div>
+        </a>
+        
+        <a href="#">
+            <div class="div-tile"  id="webform-div"> 
+                <h1>Web Form 📃</h1>
+            </div>
+        </a>
+        
+        <a href="#">
+            <div class="div-tile" id="webchat-div">
+                <h1>Webchat 💬</h1>
+            </div>
+        </a>
+
+        <div class="modal">
+            <div class="modal-content">
+                <div class="div-form">
+                    <form class="form" action="" method="" id="orderForm">
+                        <input type="text" id="recipient" name="recipient" value="@sap.com" placeholder="email"><br>
+                        <input type="text" id="CustomerName" name="CustomerName" value="John" placeholder="Customer Name"><br>
+                        <input type="text" id="Address" name="Address" value="SW1A 1AA" placeholder="Delivery Address"><br>
+                            <select id="ProductID" name="ProductID">
+                                <option value="PZ00001">Cheese</option>
+                                <option value="PZ00002">Pepperoni</option>
+                                <option value="PZ00003">Margherita</option>
+                                <option value="PZ00004">Veggie</option>
+                                <option value="PZ00005">Meat</option>
+                            </select>
+                        </form> 
+                        <button onclick="startFlow();">Place order!</button>               
+                </div>
+            </div>
         </div>
         <script
             src="https://cdn.cai.tools.sap/webclient/bootstrap.js"

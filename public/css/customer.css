@@ -7,6 +7,17 @@ header {
     background-color: #4D5382;
     color: #DBD5B5;
     padding: 10px;
+    text-align: center;
+}
+
+.div-tile{
+    width: 33.33%;
+    height: 84%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Abril Fatface', cursive;
 }
 
 
@@ -33,16 +44,86 @@ button{
     border-radius: 4px;
     cursor: pointer;
     font-size: 2vw;
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+.div-tile h1 {
+    font-size: 42px;
+    color: #DBD5B5;
+}
+
+.div-tile:hover{
+    cursor:pointer;
+    opacity:85%;
 }
 
 button:hover {
     background-color: #45a049;  
 }
 
+#facebook-div {
+    background:#3b5998;
+}
+
+#webform-div {
+    background: #F8333C;
+}
+
+#webchat-div {
+    background:#2B9EB3;
+}
+
 .div-form {
+    float:left; 
     border-radius: 10px;
-    width: 30%;
-    /* background-color: #f2f2f2; */
-    padding: 20px;
+    width: 40%;
+    padding: 1%;
     background-color: #CCCCCC;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 40%;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-button{
+    width: 20%;
+    height: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    background-color: #F8333C;
+    border-color: #F8333C;
+    font-size: 2vw;
 }
