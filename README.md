@@ -57,7 +57,7 @@ cf set-env smb-eats AUTH_CLIENT_ID 'sb-clone-safasf-f519-asfsa-b3f2-asfsafc!b589
 cf set-env smb-eats AUTH_CLIENT_SECRET '1231231-da64-123123-12412-1231231$s8uRBo-121123123-6-Go='
 cf set-env smb-eats WF_REST_URL https://api.workflow-sap.cfapps.eu10.hana.ondemand.com/workflow-service/rest
 cf set-env smb-eats WF_DEFINITION smbeats
-
+```
 Restart your application (so it can read the new environment variables)
 ```sh
 cf restart scp-byd
