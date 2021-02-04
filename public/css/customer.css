@@ -80,7 +80,7 @@ button:hover {
 .div-form {
     float:left; 
     border-radius: 10px;
-    width: 40%;
+    width: 100%;
     padding: 1%;
     background-color: #CCCCCC;
 }
@@ -102,7 +102,7 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: #CCCCCC;
     padding: 1rem 1.5rem;
     width: 40%;
     border-radius: 0.5rem;

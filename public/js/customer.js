@@ -1,3 +1,13 @@
+$(document).ready(function(){  
+	$( "#webform-div" ).click(function() {
+    $(".modal").toggleClass("show-modal")
+ 	});
+	
+	$( ".modal" ).click(function() {
+    $(".modal").toggleClass("show-modal")
+	});
+})
+
 function startFlow() {
 
   var data = {
