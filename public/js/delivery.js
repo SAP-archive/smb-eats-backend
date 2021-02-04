@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$("table").on("click", "button", function( event ) {
 		$(this).text("🛵💨 Starting");
 		$(this).attr("disabled", true);
-		completeTask(this.id, this.className)
+	//	completeTask(this.id, this.className)
 	});
 	loadOpenTasks()
 
