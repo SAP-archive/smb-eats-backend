@@ -46,6 +46,7 @@ cf set-env smb-eats AUTH_CLIENT_ID '<Client ID as on on the Workflow instance se
 cf set-env smb-eats AUTH_CLIENT_SECRET '<Client Secret>'
 cf set-env smb-eats WF_REST_URL <Workflow REST API URL>
 cf set-env smb-eats WF_DEFINITION <Workflow Definition ID>
+cf set-env smb-eats GMAPS_API_KEY  <Google Maps Places API Key> //Optional
 ```
 **Example**
 ```sh
