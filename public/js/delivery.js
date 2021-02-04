@@ -2,7 +2,9 @@ var user = "delivery"
 $(document).ready(function(){  
 
 	$("table").on("click", "button", function( event ) {
-		completeTask(this.id, this.className)
+		$(this).text("🛵💨 Starting");
+		$(this).attr("disabled", true);
+	//	completeTask(this.id, this.className)
 	});
 	loadOpenTasks()
 
