@@ -1,11 +1,17 @@
 $(document).ready(function(){  
 	$( "#webform-div" ).click(function() {
     $(".modal").toggleClass("show-modal")
+   });
+   
+   $( "#webchat-div" ).click(function() {
+    $(".modal").toggleClass("show-modal")
  	});
 	
-	$( ".modal" ).click(function() {
-    $(".modal").toggleClass("show-modal")
-	});
+	$( ".modal" ).click(function(event) {''
+    if(!$(event.target).closest('.modal-content').length && !$(event.target).is('.modal-content')) {
+      $(".modal").toggleClass("show-modal")
+    }  
+  });
 })
 
 function startFlow() {
