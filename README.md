@@ -1,4 +1,4 @@
-![CI](https://github.com/SAP-samples/byd-eats-backend/workflows/CI/badge.svg)
+![CI](https://github.com/SAP-samples/smb-eats-backend/workflows/CI/badge.svg)
 # Title
 
 ## Description

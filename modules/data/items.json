@@ -2,26 +2,26 @@
     {
         "ProductID": "PZ00001",
         "Description": "Cheese Pizza",
-        "ImageUrl": "https://byd-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00001.png"
+        "ImageUrl": "https://smb-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00001.png"
     },
     {
         "ProductID": "PZ00002",
         "Description": "Pepperoni Pizza",
-        "ImageUrl": "https://byd-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00002.png"
+        "ImageUrl": "https://smb-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00002.png"
     },
     {
         "ProductID": "PZ00003",
         "Description": "Margherita Pizza",
-        "ImageUrl": "https://byd-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00003.png"
+        "ImageUrl": "https://smb-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00003.png"
     },
     {
         "ProductID": "PZ00004",
         "Description": "Veggie Lover Pizza",
-        "ImageUrl": "https://byd-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00004.png"
+        "ImageUrl": "https://smb-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00004.png"
     },
     {
         "ProductID": "PZ00005",
         "Description": "Meat Lover Pizza",
-        "ImageUrl": "https://byd-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00005.png"
+        "ImageUrl": "https://smb-eats.cfapps.eu10.hana.ondemand.com/pics/PZ00005.png"
     }
 ]

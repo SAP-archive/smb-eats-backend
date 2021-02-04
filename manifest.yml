@@ -1,6 +1,6 @@
 ---
 applications:
-- name: byd-eats
+- name: smb-eats
   memory: 128m
   instances: 1
   buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
