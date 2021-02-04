@@ -11,7 +11,7 @@ This is a sample application to demonstrate how partners can created solutions t
 
 It implements an End-to-end process of Food Ordering solution, from customer ordering to the delivery confirmation. Such process is handled by the [Workflow Management Service](https://discovery-center.cloud.sap/serviceCatalog/workflow-management)
 
-![worfklow process](https://i.imgur.com/o6mk8oQ.png "Workflow process on the Business Application Studio")
+![worfklow process](https://i.imgur.com/mouLjiT.png "Workflow process on the Business Application Studio")
 
 The process starts with the "customer persona" that places an order using a Chatbot created with [SAP Conversational AI](https://cai.tools.sap/)
 
