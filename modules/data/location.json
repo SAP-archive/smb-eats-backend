@@ -1,0 +1,39 @@
+{
+    "business_status": "OPERATIONAL",
+    "formatted_address": "Dietmar-Hopp-Allee 16, 69190 Walldorf, Germany",
+    "geometry": {
+        "location": {
+            "lat": 49.2938038,
+            "lng": 8.6417697
+        },
+        "viewport": {
+            "northeast": {
+                "lat": 49.29498392989272,
+                "lng": 8.643293129892722
+            },
+            "southwest": {
+                "lat": 49.29228427010727,
+                "lng": 8.640593470107278
+            }
+        }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+    "name": "SAP SE (WDF01)",
+    "obfuscated_type": [],
+    "opening_hours": {},
+    "photos": [{
+        "height": 2432,
+        "html_attributions": ["<a href=\"https://maps.google.com/maps/contrib/105053824070958955292\">Johannes Heinrich</a>"],
+        "photo_reference": "ATtYBwKTDGyXWjgQq8NSVV6uBfNYlj_dzDQduRwU5q9FgSNxbKvQt5Ju83rKZb7MF3jXVPlXrmonxQ2gQaHow9xKJA0zVdzgjIXWo88nPplo7RnHre1RPv8w6qZpg_QTlrYIJvQJAvTkfcx6oWZ0DA0G-kwAxkTyvgODL__5qDMVOolugY8",
+        "width": 3286
+    }],
+    "place_id": "ChIJ1z4qRaS-l0cRvDpV65TBXqw",
+    "plus_code": {
+        "compound_code": "7JVR+GP Walldorf",
+        "global_code": "8FXC7JVR+GP"
+    },
+    "rating": 4.7,
+    "reference": "ChIJ1z4qRaS-l0cRvDpV65TBXqw",
+    "types": ["point_of_interest", "establishment"],
+    "user_ratings_total": 748
+}
