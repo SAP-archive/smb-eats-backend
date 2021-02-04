@@ -4,7 +4,7 @@ $(document).ready(function(){
    });
    
    $( "#webchat-div" ).click(function() {
-    $(".modal").toggleClass("show-modal")
+    $("#cai-webclient-builtin-button").trigger("click");
  	});
 	
 	$( ".modal" ).click(function(event) {''

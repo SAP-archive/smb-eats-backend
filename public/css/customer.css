@@ -127,3 +127,7 @@ button:hover {
     border-color: #F8333C;
     font-size: 2vw;
 }
+
+#cai-webclient-builtin-button{
+    visibility: hidden;
+}
