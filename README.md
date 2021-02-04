@@ -1,3 +1,5 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/smb-eats-backend)](https://api.reuse.software/info/github.com/SAP-samples/smb-eats-backend)
+[![License: Apache2](https://img.shields.io/badge/License-Apache2-green.svg)](https://opensource.org/licenses/Apache-2.0)
 ![CI](https://github.com/SAP-samples/smb-eats-backend/workflows/CI/badge.svg)
 # smb-eats
 
@@ -28,7 +30,7 @@ Once the delivery is confirmed and the process is finished, the customer receive
 * [smb-eats-integration deployed](#)
 
 
-### Deployment
+## Deployment
 Clone this repository
 ```sh
 git clone https://github.com/SAP-Samples/smb-eats-backend.git
