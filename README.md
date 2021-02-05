@@ -8,8 +8,6 @@
 
 ## Description
 This is a sample application to demonstrate how partners can created solutions that leverage several the [SAP Business Technology Platform](https://www.sap.com/products/business-technology-platform.html) to create integrations and extensions to business applications (in this case SAP Business ByDesign)
-![](https://i.imgur.com/9lr43zA.png)
-
 
 It implements an End-to-end process of Food Ordering solution, from customer ordering to the delivery confirmation. Such process is handled by the [Workflow Management Service](https://discovery-center.cloud.sap/serviceCatalog/workflow-management)
 
@@ -24,6 +22,8 @@ In between assigning tasks, the Workflow is also making request to the [Integrat
 Once the delivery is confirmed and the process is finished, the customer receives a [Qualtrics Survey](https://discovery-center.cloud.sap/serviceCatalog/integration-suite) to evaluate the experience.
 
 🔴 [Live Demo](https://smb-eats.cfapps.eu10.hana.ondemand.com/)
+
+📄 [Blog with details](https://blogs.sap.com/2021/02/05/sap-workflow-management-and-loosely-coupled-architecture/)
 
 
 ## Requirements
