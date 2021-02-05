@@ -8,6 +8,8 @@
 
 ## Description
 This is a sample application to demonstrate how partners can created solutions that leverage several the [SAP Business Technology Platform](https://www.sap.com/products/business-technology-platform.html) to create integrations and extensions to business applications (in this case SAP Business ByDesign)
+![](https://i.imgur.com/9lr43zA.png)
+
 
 It implements an End-to-end process of Food Ordering solution, from customer ordering to the delivery confirmation. Such process is handled by the [Workflow Management Service](https://discovery-center.cloud.sap/serviceCatalog/workflow-management)
 
