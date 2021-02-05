@@ -27,7 +27,7 @@ Once the delivery is confirmed and the process is finished, the customer receive
 ## Requirements
 * [Free Trial Account](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 * [Install the Cloud Foundry CLI](https://developers.sap.com/tutorials/cp-cf-download-cli.html)
-* [smb-eats-integration deployed](#)
+* [smb-eats-integration deployed](https://github.com/SAP-samples/smb-eats-integration)
 
 
 ## Deployment
