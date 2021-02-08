@@ -30,6 +30,7 @@ Once the delivery is confirmed and the process is finished, the customer receive
 * [Free Trial Account](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 * [Install the Cloud Foundry CLI](https://developers.sap.com/tutorials/cp-cf-download-cli.html)
 * [smb-eats-integration deployed](https://github.com/SAP-samples/smb-eats-integration)
+* [The Service Key Details](https://help.sap.com/viewer/e157c391253b4ecd93647bf232d18a83/Cloud/en-US/e8d88dd056f14c75af59e68d6b20345f.html#loioe8d88dd056f14c75af59e68d6b20345f__create_service_key) of your workflow instance
 
 
 ## Deployment
@@ -41,6 +42,12 @@ From the root directory, using the [Cloud Foundry CLI](https://docs.cloudfoundry
 ```sh
 cf push --random-route
 ```
+Allow your worfklow instance, created during the deployment of the [smb-eats-integration](https://github.com/SAP-samples/smb-eats-integration), to expose APIs on needed scopes running the following command:
+```sh
+cf update-service <WF INSTANCE NAME> -c '{"authorities": ["WORKFLOW_DEFINITION_GET", "WORKFLOW_INSTANCE_START", "WORKFLOW_INSTANCE_GET", "TASK_GET", "TASK_GET_CONTEXT", "TASK_COMPLETE", "TASK_UPDATE"]}'
+```
+*This will allow the backend application to consume [Workflow APIs](https://api.sap.com/api/SAP_CP_Workflow_CF/resource)*
+
 Then set the Environment Variables accordingly
 ```sh
 cf set-env smb-eats ACTIVITY_KITCHEN <Workflow Task ID for Kitchen>
