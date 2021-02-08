@@ -67,6 +67,8 @@ Restart your application (so it can read the new environment variables)
 cf restart scp-byd
 ```
 
+For the chatbot deployment [check chatbot-readme](chatbot-readme.md)
+
 ## Support and Contributions
 This repository is provided "as-is". No support is available. Feel free to open issues or provide pull requests.
 
