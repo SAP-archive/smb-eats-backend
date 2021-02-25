@@ -18,6 +18,7 @@ function startFlow() {
 
   var data = {
     recipient: $("#recipient").val(),
+    erp: $("#erp").val(),
     orderData: {
         CustomerName: $("#CustomerName").val(),
         CustomerEmail: $("#recipient").val(), //just for demo purposes
