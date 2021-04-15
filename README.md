@@ -71,7 +71,7 @@ cf set-env smb-eats WF_DEFINITION smbeats
 ```
 Restart your application (so it can read the new environment variables)
 ```sh
-cf restart scp-byd
+cf restart smb-eats
 ```
 
 For the chatbot deployment [check chatbot-readme](chatbot-readme.md)
