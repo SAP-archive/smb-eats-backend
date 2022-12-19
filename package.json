@@ -25,7 +25,7 @@
   "homepage": "https://github.com/SAP-samples/smb-eats-backend#readme",
   "dependencies": {
     "axios": "^0.21.2",
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "express": "^4.17.3"
   }
 }
